@@ -1,7 +1,13 @@
+"use client"
+
 import Link from "next/link"
 import logo from "../app/assets/STACKY.svg"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
+import classnames from "classnames"
+
 const NavBar = () => {
+  const currentPath = usePathname()
   const links = [
     { label: "Browse", href: "/browse" },
     { label: "Collection", href: "/collection" },
@@ -18,7 +24,11 @@ const NavBar = () => {
         {links.map((link) => (
           <Link
             key={link.href}
-            className="text-white hover:text-zinc-800 transition-colors"
+            className={classnames({
+              "text-slate-50": link.href !== currentPath,
+              "text-slate-300 font-semibold": link.href === currentPath,
+              "hover:text-slate-300 transition-colors": true,
+            })}
             href={link.href}
           >
             {link.label}
