@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "@types/node": "20.8.6",
     "@types/react": "18.2.28",
     "@types/react-dom": "18.2.13",
     "autoprefixer": "10.4.16",
+    "aws-sdk": "^2.1476.0",
     "classnames": "^2.3.2",
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.4",
